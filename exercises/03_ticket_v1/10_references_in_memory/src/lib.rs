@@ -13,16 +13,16 @@ mod tests {
 
     #[test]
     fn u16_ref_size() {
-        assert_eq!(size_of::<&u16>(), todo!());
+        assert_eq!(size_of::<&u16>(), 8);//u16 本身是 2 字节，但 &u16 是指针，不是 u16。
     }
 
     #[test]
     fn u64_mut_ref_size() {
-        assert_eq!(size_of::<&mut u64>(), todo!());
+        assert_eq!(size_of::<&mut u64>(), 8);//u64 本身是 8 字节，&mut u64 也是 8 字节，因为它是一个指针。
     }
 
     #[test]
     fn ticket_ref_size() {
-        assert_eq!(size_of::<&Ticket>(), todo!());
+        assert_eq!(size_of::<&Ticket>(), 8);//&Ticket 是 Ticket 的引用，在 64 位平台上也是 8 字节。72 是 Ticket 本身在 64 位平台上的大小：
     }
 }
